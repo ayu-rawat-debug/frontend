@@ -1,0 +1,208 @@
+/* Main Header Styles - FINAL FIX */
+.main-header {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex; /* This is the key change */
+  align-items: center; /* This centers items vertically */
+  justify-content: space-between; /* Pushes content to the left and right */
+  border-bottom: 2px solid #333;
+}
+
+.header-left {
+  flex-shrink: 0;
+}
+
+.header-logo {
+  height: 80px; /* Adjust as needed */
+  width: auto;
+}
+
+.header-info {
+  flex-grow: 1; /* This will make the info section take up all available space */
+  text-align: center; /* This will center the text within that space */
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #00dfff, #ff00c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+/* Core Layout for Admin Pages */
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.admin-content {
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Admin Navbar Styles */
+.admin-navbar {
+  display: flex;
+  justify-content: space-between; /* This pushes the left and center content apart */
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #0d0d0d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.admin-nav-left {
+  /* This container holds the home button and keeps it on the left */
+}
+
+.admin-nav-center {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center; }
+
+
+.admin-nav-links {
+  display: flex;
+  gap: 25px;
+  justify-content: flex-start; 
+    flex-grow: 1;}
+
+.admin-nav-btn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #1c1c1c;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1c1c1c, #1c1c1c), 
+                    linear-gradient(45deg, #ff00c8, #00dfff);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.admin-nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2), 0 5px 15px rgba(255, 0, 200, 0.2);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  top: 100%;
+  left: 0;
+  border: 1px solid #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-link {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-link:hover {
+  background-color: #2e2e2e;
+  color: #00dfff;
+}
+
+/* Admin Form Styles */
+/* Admin Form Styles - Consolidated & Corrected */
+.admin-container {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                    linear-gradient(45deg, #ff00c8, #00dfff);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* This is the key to correct sizing */
+}
+
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+  outline: none;
+  border-color: #00dfff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.admin-form .btn-rgb {
+  margin-top: 15px; /* Adjusting margin for proper spacing */
+}
+
+.status-message {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* New Form Field Styling */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Spacing between label and input */
+}
+
+.form-field label {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+

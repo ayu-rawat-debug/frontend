@@ -1,0 +1,372 @@
+/* File: src/pages/Technician/Technician.css */
+
+/* --- Global Styles --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #121212; /* Consistent dark background */
+    color: #e0e0e0; /* Consistent light text color */
+}
+
+.technician-home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: #1a1a1a; /* Dark background matching admin forms */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00dfff; /* Match the vibrant blue from your admin theme */
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff00c8, #00dfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #00dfff; /* Matching the vibrant blue from your admin theme */
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ff00c8; /* Hover effect to match the gradient start color */
+}
+
+/* --- Page Content Styling --- */
+.main-title {
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* File: src/pages/Technician/TechnicianHomePage.css */
+
+/* --- Main Page Container --- */
+.technician-home-page-content {
+    padding: 2rem;
+}
+
+.main-title {
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Repairs List --- */
+.repairs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.repair-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+}
+
+.repair-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.repair-card p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #b0b0b0;
+}
+
+.repair-card p strong {
+    color: #00ffc8;
+}
+
+.card-actions {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.edit-btn {
+    background-color: #00dfff;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #00aacc;
+    transform: scale(1.05);
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-close-btn:hover {
+    color: #ff4d4f;
+}
+
+/* --- Form Fields --- */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+}
+
+/* --- Modal Buttons --- */
+.modal-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.save-btn, .cancel-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-btn {
+    background-color: #00ffc8;
+    color: #121212;
+}
+
+.save-btn:hover {
+    background-color: #00cc99;
+}
+
+.cancel-btn {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c62828;
+}
+
+/* File: src/pages/Technician/TechnicianProfilePage.css */
+
+/* --- Profile Container --- */
+.technician-profile-container {
+    padding: 2rem;
+}
+
+.profile-details {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+}
+
+.profile-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.profile-details p:last-of-type {
+    border-bottom: none;
+}
+
+.profile-details p strong {
+    color: #00ffc8;
+    font-weight: bold;
+}
+
+.edit-profile-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #1a1a1a;
+    color: #00dfff;
+    border: 2px solid #00dfff;
+    margin-top: 1rem;
+}
+
+.edit-profile-btn:hover {
+    background-color: #00dfff;
+    color: #1a1a1a;
+}
+/* File: src/pages/Technician/TechnicianProfilePage.css */
+
+/* --- Modal Content --- */
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-close-btn:hover {
+    color: #ff4d4f;
+}
+
+/* --- Modal Form Groups --- */
+.form-group {
+    margin-bottom: 1.5rem; /* Increased spacing */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #00dfff; /* Match your theme's vibrant color */
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+}
+
+/* --- Modal Button Actions --- */
+.modal-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.save-btn, .cancel-btn {
+    flex-grow: 1; /* Makes buttons fill the space */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-btn {
+    background-color: #00ffc8;
+    color: #121212;
+}
+
+.save-btn:hover {
+    background-color: #00cc99;
+}
+
+.cancel-btn {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c62828;
+}

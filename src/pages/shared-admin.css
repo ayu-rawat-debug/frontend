@@ -1,0 +1,701 @@
+/* All your Admin-related CSS classes should go here */
+/* .admin-container, .admin-form, .admin-table, etc. */
+/* This includes styles from previous discussions */
+
+.admin-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn-rgb, .btn-edit, .btn-delete {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #000;
+    border: 1px solid #4a90e2;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.error-message {
+    color: #ff4d4f;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+.admin-table td:last-child {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-edit,
+.btn-delete {
+    width: 80px;
+    text-align: center;
+}
+
+.close-btn {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+
+/* Style for the "Assign" button */
+.btn-assign {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+
+.btn-assign:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+/* Style for the "Change" button */
+.btn-change {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #ff4d4f);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+
+.btn-change:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 0, 200, 0.8);
+}
+
+/* File: pages/shared-admin.css */
+
+/* --- Modal Overlay & Content --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker, semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #2a2a2a; /* Darker background for the modal */
+    padding: 2.5rem; /* Increased padding */
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+    width: 90%;
+    max-width: 500px; /* Max width for better readability */
+    position: relative;
+    color: #e0e0e0; /* Lighter text color */
+}
+
+/* --- Close Button --- */
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem; /* Larger close button */
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #f44336; /* Red on hover */
+}
+
+/* --- Modal Title --- */
+.modal-title {
+    font-size: 1.8rem; /* Larger title */
+    color: #4CAF50; /* Green highlight */
+    margin-bottom: 2rem; /* More space below title */
+    text-align: center;
+    border-bottom: 1px solid #444; /* Subtle separator */
+    padding-bottom: 0.8rem;
+}
+
+/* --- Form Group Styling --- */
+.form-group {
+    margin-bottom: 1.5rem; /* More space between form elements */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem; /* Space between label and input */
+    font-size: 1.1rem; /* Slightly larger labels */
+    color: #ccc;
+    font-weight: bold;
+}
+
+/* --- Input and Select Fields --- */
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem; /* More padding */
+    border: 1px solid #555; /* Darker border */
+    border-radius: 6px; /* Slightly more rounded */
+    background-color: #3b3b3b; /* Darker input background */
+    color: #e0e0e0; /* Lighter text */
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4CAF50; /* Green focus border */
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5); /* Green glow on focus */
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 100px; /* Taller textarea */
+    resize: vertical;
+}
+
+/* --- Checkbox Styling --- */
+.form-group input[type="checkbox"] {
+    margin-right: 0.75rem; /* Space between checkbox and label text */
+    width: 1.2em; /* Make checkbox slightly larger */
+    height: 1.2em;
+    vertical-align: middle;
+    appearance: none; /* Hide default checkbox */
+    border: 2px solid #555;
+    border-radius: 4px;
+    background-color: #3b3b3b;
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+}
+
+.form-group input[type="checkbox"]:checked {
+    background-color: #4CAF50; /* Green when checked */
+    border-color: #4CAF50;
+}
+
+.form-group input[type="checkbox"]:checked::before {
+    content: '✔'; /* Checkmark symbol */
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.9em;
+}
+
+/* --- Button Group --- */
+.modal .btn-submit,
+.modal .btn-cancel {
+    padding: 0.8rem 1.8rem; /* Larger buttons */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem; /* Space above buttons */
+}
+
+.modal .btn-submit {
+    background-color: #4CAF50; /* Green for submit */
+    color: white;
+    margin-right: 1rem; /* Space between buttons */
+}
+
+.modal .btn-submit:hover {
+    background-color: #45a049;
+}
+
+.modal .btn-cancel {
+    background-color: #757575; /* Gray for cancel */
+    color: white;
+}
+
+.modal .btn-cancel:hover {
+    background-color: #616161;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .close-btn {
+        font-size: 2rem;
+        top: 0.75rem;
+        right: 1rem;
+    }
+
+    .modal .btn-submit,
+    .modal .btn-cancel {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+}
+
+/* --- Modal Styles (for the Assign Technician modal) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.modal-content .form-field {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.modal-content .form-field label {
+    display: block;
+    font-size: 1.1rem;
+    color: #00dfff; /* Match theme's vibrant blue */
+    margin-bottom: 0.5rem;
+}
+
+.modal-content .form-field select {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+    appearance: none; /* Removes default dropdown arrow */
+}
+
+/* --- Button Group Styling --- */
+.button-group.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-update, .btn-cancel {
+    flex-grow: 1;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-update {
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.btn-update:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+.btn-cancel {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #c62828;
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.modal-content .form-field {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.modal-content .form-field label {
+    display: block;
+    font-size: 1.1rem;
+    color: #00dfff;
+    margin-bottom: 0.5rem;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    color: #e0e0e0;
+}
+.analytics-container {
+  padding: 2rem;
+  background-color: #121212;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#121212, #121212),
+                    linear-gradient(45deg, #00dfff, #ff00c8);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  color: #e0e0e0;
+}
+
+.analytics-title {
+  font-size: 2rem;
+  color: #00dfff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.kpi-card {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 223, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.kpi-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0, 223, 255, 0.5);
+}
+
+.kpi-title {
+  font-size: 1rem;
+  color: #00ffc8;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.low-stock-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                    linear-gradient(45deg, #ff00c8, #00dfff);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.low-stock-section h3 {
+  font-size: 1.5rem;
+  color: #00dfff;
+  margin-bottom: 1rem;
+}
+
+.low-stock-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.low-stock-list li {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.low-stock-list li:hover {
+  background-color: #333;
+}
+
+.stock-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.stock-badge.low {
+  background-color: #ff9800;
+}
+
+.stock-badge.out {
+  background-color: #d32f2f;
+}
+.report-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.report-buttons button {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                    linear-gradient(45deg, #00dfff, #ff00c8);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 223, 255, 0.3);
+}
+
+.report-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 223, 255, 0.6);
+}
+
+.report-buttons button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 8px rgba(255, 0, 200, 0.5);
+}
+.date-inputs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.date-inputs input[type="date"] {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-image: linear-gradient(#2a2a2a, #2a2a2a),
+                    linear-gradient(45deg, #00dfff, #ff00c8);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 8px rgba(0, 223, 255, 0.3);
+}
+
+.date-inputs input[type="date"]:hover {
+  box-shadow: 0 0 12px rgba(0, 223, 255, 0.6);
+  transform: scale(1.02);
+}
+
+.date-inputs input[type="date"]:focus {
+  outline: none;
+  box-shadow: 0 0 14px rgba(255, 0, 200, 0.6);
+}

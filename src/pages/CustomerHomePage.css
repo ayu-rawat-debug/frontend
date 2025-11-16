@@ -1,0 +1,1227 @@
+/* File: src/pages/CustomerHomePage.css */
+
+/* Global Styles for the customer page, matching the admin theme */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #121212; /* Consistent dark background */
+  color: #e0e0e0; /* Consistent light text color */
+}
+
+.customer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px; /* Matching admin container padding */
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+  background-color: #1a1a1a; /* Dark background matching admin forms */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00dfff; /* Match the vibrant blue from your admin theme */
+  text-decoration: none;
+  background: linear-gradient(45deg, #ff00c8, #00dfff); /* RGB Gradient from your admin buttons */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #00dfff; /* Matching the vibrant blue from your admin theme */
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ff00c8; /* Hover effect to match the gradient start color */
+}
+
+/* --- Homepage specific styles --- */
+.homepage-container {
+  padding: 2rem;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.main-title {
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  text-align: center;
+  color: #00dfff; /* Vibrant blue for section titles to match admin theme */
+  margin: 2.5rem 0 1.5rem;
+  font-size: 2.5rem;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* --- Item Cards --- */
+.item-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.item-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.item-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.item-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.item-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.item-price {
+  font-size: 1.2rem;
+  color: #00ffc8;
+  font-weight: bold;
+  margin: 0 0 1rem;
+}
+
+.item-specs {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 1rem;
+}
+
+.item-grade {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+  margin-top: auto;
+}
+
+/* --- Buttons --- */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+.view-cart-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.view-cart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+/* This is for the product details page */
+.product-detail-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-name {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.product-price {
+  font-size: 2rem;
+  color: #00ffc8;
+  font-weight: bold;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.product-desc, .product-specs, .product-grade {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.back-link {
+  display: block;
+  margin-top: 2rem;
+  color: #00dfff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #ff00c8;
+}
+
+/* --- Modal Overlays and Dialogs --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  text-align: center;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  color: #ff4d4f;
+}
+
+.empty-cart {
+  color: #aaa;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item .item-details {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.cart-item h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.cart-item p {
+  margin: 0;
+  color: #00ffc8;
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item-controls button {
+  background: #2a2a2a;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+}
+
+.remove-btn, .checkout-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.remove-btn {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.remove-btn:hover {
+  background: #c62828;
+}
+
+.checkout-btn {
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: white;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.checkout-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+/* File: src/components/Customer/UserProfile.css */
+
+.user-profile-container {
+    padding: 2rem;
+    background-color: #121212; /* Consistent dark background */
+    color: #e0e0e0; /* Consistent light text color */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-profile-container h1 {
+    color: #00dfff; /* Vibrant blue to match the theme */
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.profile-details {
+    background-color: #1a1a1a; /* Dark background matching nav and forms */
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), 
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.profile-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.profile-details p:last-of-type {
+    border-bottom: none;
+}
+
+.profile-details p strong {
+    color: #00ffc8; /* Light green for labels, consistent with prices */
+    font-weight: bold;
+}
+
+.user-profile-container h2 {
+    color: #00dfff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    border-bottom: 2px solid #ff00c8; /* Underline with a vibrant pink */
+    padding-bottom: 0.5rem;
+}
+
+.order-history {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.order-card {
+    background-color: #2a2a2a; /* Slightly lighter dark color for contrast */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.order-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.order-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.order-card p strong {
+    color: #fff; /* White for strong labels in the order cards */
+}
+
+/* Optional: Style for loading and error messages */
+.loading, .error {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    color: #00dfff;
+}
+
+.error {
+    color: #ff4d4f; /* Red for errors */
+}
+
+/* --- Navigation Buttons --- */
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #00dfff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.nav-btn:hover {
+    color: #ff00c8;
+}
+
+/* --- Modal Overlays and Dialogs --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+}
+.close-btn:hover {
+    color: #ff4d4f;
+}
+
+/* --- Repair Form specific styles --- */
+.repair-form {
+    background: #1e1e1e; /* Dark background matching item cards */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.repair-form h2 {
+    text-align: center;
+    color: #00dfff;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.repair-form button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+
+.repair-form button[type="submit"]:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+/* File: src/pages/CustomBuiltPage.css */
+
+/* --- Main Page Container --- */
+.custom-built-container {
+    padding: 2rem;
+    background-color: #121212; /* Consistent dark background */
+    color: #e0e0e0; /* Consistent light text color */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* --- Section Title and Headers --- */
+.custom-built-container h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.build-section h2 {
+    text-align: center;
+    color: #00dfff; /* Vibrant blue for section titles */
+    margin: 2.5rem 0 1.5rem;
+    font-size: 2.5rem;
+}
+
+/* --- Current Build Summary --- */
+.current-built-summary {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    margin: 0 auto 2rem;
+    max-width: 800px;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+}
+
+.current-built-summary h3 {
+    text-align: right;
+    color: #00ffc8;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.current-built-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.current-built-summary li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.current-built-summary li:last-child {
+    border-bottom: none;
+}
+
+.current-built-summary button {
+    background: none;
+    border: 1px solid #ff4d4f;
+    color: #ff4d4f;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.current-built-summary button:hover {
+    background-color: #ff4d4f;
+    color: #fff;
+}
+
+.save-build-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.save-build-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+.save-build-btn:disabled {
+    background-image: none;
+    background-color: #333;
+    border: 1px solid #555;
+    cursor: not-allowed;
+    color: #888;
+}
+
+/* --- Available Parts Section --- */
+.available-parts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.available-parts-list .section-title {
+    grid-column: 1 / -1; /* Makes the title span all columns */
+    text-align: center;
+    color: #ff00c8; /* Using the pink gradient color for this section */
+}
+
+.part-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+}
+
+.part-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.part-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 0.5rem;
+}
+
+.part-card .price {
+    font-size: 1.2rem;
+    color: #00ffc8;
+    font-weight: bold;
+}
+
+.part-card button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.part-card button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+/* File: src/pages/CustomBuiltPage.css */
+
+/* --- Modal Overlay and Dialogs --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    text-align: center;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    color: #ff4d4f;
+}
+
+/* --- Edit Form Elements --- */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* --- Buttons --- */
+.update-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.update-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+.cancel-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.cancel-btn:hover {
+    background-color: #c62828;
+}
+
+/* The edit and delete buttons on the saved cards */
+.edit-btn {
+    background-color: #1a1a1a;
+    color: #00dfff;
+    border: 2px solid #00dfff;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #00dfff;
+    color: #1a1a1a;
+}
+
+.delete-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c62828;
+}
+/* File: src/pages/CustomBuiltPage.css */
+
+/* --- Saved Builds Section --- */
+.saved-builds-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.saved-build-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem; /* This adds the internal padding */
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+}
+
+.saved-build-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.saved-build-card h3, .saved-build-card h4 {
+    margin: 0 0 0.5rem; /* Ensures consistent spacing for headings */
+    color: #fff;
+    font-weight: bold;
+}
+
+.saved-build-card p {
+    font-size: 1rem;
+    color: #00ffc8;
+    font-weight: bold;
+    margin: 0 0 1rem; /* Adds space below the total price */
+}
+
+/* --- Build Actions (Edit/Delete Buttons) --- */
+.build-actions {
+    margin-top: 1rem; /* Adds space between components list and buttons */
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-btn, .delete-btn {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #1a1a1a;
+    color: #00dfff;
+    border: 2px solid #00dfff;
+}
+
+.edit-btn:hover {
+    background-color: #00dfff;
+    color: #1a1a1a;
+}
+
+.delete-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+}
+
+.delete-btn:hover {
+    background-color: #c62828;
+}
+/* File: src/components/Customer/UserProfile.css */
+
+/* --- Order History Section --- */
+.order-history {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 700px;
+}
+
+.order-card {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.order-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.order-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #b0b0b0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.order-card p strong {
+    color: #00ffc8; /* Highlighted text for labels */
+}
+
+.cancel-order-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+.cancel-order-btn:hover {
+    background-color: #c62828;
+    transform: scale(1.05);
+}
+
+.edit-profile-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #1a1a1a;
+    color: #00dfff; /* Vibrant blue text */
+    border: 2px solid #00dfff; /* Vibrant blue border */
+    margin-top: 1rem;
+}
+
+.edit-profile-btn:hover {
+    background-color: #00dfff;
+    color: #1a1a1a;
+}
+
+/* --- Modal Overlay and Content --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+}
+
+/* --- Modal Form Groups --- */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+}
+
+.modal-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* --- Modal Buttons --- */
+.save-btn, .cancel-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-btn {
+    background-color: #00ffc8;
+    color: #121212;
+}
+
+.save-btn:hover {
+    background-color: #00cc99;
+}
+
+.cancel-btn {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c62828;
+}
+.build-specs-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.build-specs-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+    color: #b0b0b0;
+}
+
+.view-build-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #00dfff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.view-build-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}

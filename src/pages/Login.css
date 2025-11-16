@@ -1,0 +1,336 @@
+/* File: src/pages/Login.css */
+
+/* --- Login Page Container --- */
+.login-container {
+    padding: 2rem;
+    background-color: #121212; /* Consistent dark background */
+    color: #e0e0e0; /* Consistent light text color */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Login Form Styles --- */
+.login-container form {
+    background-color: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #00dfff; /* Vibrant blue for labels */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+}
+
+.error-message {
+    color: #ff4d4f; /* Red for errors */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+/* File: src/pages/SignUp.css */
+
+/* --- Sign Up Page Container --- */
+.signup-container {
+    padding: 2rem;
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-container form {
+    background-color: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.signup-container .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.signup-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #00dfff;
+}
+
+.signup-container input, .signup-container textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+}
+
+.signup-container textarea {
+    resize: vertical;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+/* --- Forgot Password Page --- */
+.forgot-container {
+  padding: 2rem;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.forgot-container h2 {
+  font-size: 2.5rem;
+  color: #00ffc8;
+  margin-bottom: 1.5rem;
+}
+
+.forgot-container input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 6px;
+  color: #e0e0e0;
+}
+
+.forgot-container button {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                    linear-gradient(45deg, #00dfff, #00ffc8);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: all 0.3s ease;
+}
+
+.forgot-container button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+.forgot-container p {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #00dfff;
+}
+
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                    linear-gradient(45deg, #ff00c8, #00dfff);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: all 0.3s ease;
+}
+
+.btn-google:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+.btn-google img {
+  width: 20px;
+  height: 20px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 223, 255, 0.3);
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                    linear-gradient(45deg, #ff00c8, #00dfff);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  color: #e0e0e0;
+}
+
+.close-btn {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #00dfff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+.modal-content button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+/* --- Message Text --- */
+.modal-content p {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #00dfff;
+  margin-top: 0.5rem;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+/* --- Close Button --- */
+.close-btn {
+  background: none;
+  border: none;
+  color: #ff00c8;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-align: center;
+  display: block;
+}
+
+/* --- Fade In Animation --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

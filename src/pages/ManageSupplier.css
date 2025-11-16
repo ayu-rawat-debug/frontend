@@ -1,0 +1,157 @@
+
+/* Style for the "Assign" button */
+.btn-assign {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #00dfff, #00ffc8);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+
+.btn-assign:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 223, 255, 0.8);
+}
+
+/* Style for the "Change" button */
+.btn-change {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #ff4d4f);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+
+.btn-change:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 0, 200, 0.8);
+}
+/* Search Bar Styles */
+.search-bar {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #00dfff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Ensure the rest of your existing CSS is also in this file */
+body {
+    background-color: #0d0d0d;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.admin-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-table-container {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #1a1a1a, #1a1a1a),
+                      linear-gradient(45deg, #ff00c8, #00dfff);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.admin-table th {
+    background-color: #2a2a2a;
+    font-weight: bold;
+    color: #00dfff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.admin-table tr:hover {
+    background-color: #2e2e2e;
+}
+
+.btn-edit, .btn-delete {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 8px;
+}
+
+.btn-edit {
+    background-color: #4CAF50;
+}
+
+.btn-edit:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background-color: #f44336;
+}
+
+.btn-delete:hover {
+    background-color: #da190b;
+    transform: translateY(-1px);
+}

@@ -21,7 +21,7 @@ const AdminNavbar = () => {
 
         {/* Refurbished Items Management */}
         <div className="dropdown">
-          <span className="admin-nav-btn">Refurbished Items</span>
+          <span className="admin-nav-btn">Refurbished</span>
           <div className="dropdown-content">
             <Link to="/admin/refurbished/add" className="dropdown-link">Add Item</Link>
             <Link to="/admin/refurbished/manage" className="dropdown-link">Manage Items</Link>
@@ -30,7 +30,7 @@ const AdminNavbar = () => {
         
         {/* Custom Built Management */}
         <div className="dropdown">
-          <span className="admin-nav-btn">Custom Builds</span>
+          <span className="admin-nav-btn">Builds</span>
           <div className="dropdown-content">
             <Link to="/admin/custom-builds/add" className="dropdown-link">CustomBuilt</Link>
           </div>

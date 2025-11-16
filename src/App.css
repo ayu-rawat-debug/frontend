@@ -2,11 +2,14 @@
 .main-header {
   background-color: #000000;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 10px ;
   display: flex; /* This is the key change */
   align-items: center; /* This centers items vertically */
   justify-content: space-between; /* Pushes content to the left and right */
   border-bottom: 2px solid #333;
+  flex-direction: column; /* Start with vertical stacking for small screens */
+    align-items: center; /* Center items horizontally in the column */
+    gap: 10px;
 }
 
 .header-left {
@@ -22,7 +25,22 @@
   flex-grow: 1; /* This will make the info section take up all available space */
   text-align: center; /* This will center the text within that space */
 }
+.header-info p {
+    font-size: 14px; /* Make text smaller on mobile */
+    line-height: 1.4;
+    word-wrap: break-word; /* Allows long strings to break */
+}
 
+/* Ensure the left and info sections don't force a minimum width */
+.header-left, .header-info {
+    width: 100%; /* Take full width on mobile */
+    text-align: center; /* Center text info on mobile */
+}
+
+.header-logo {
+    max-width: 80px; /* Control the logo size */
+    height: auto;
+}
 .header-title {
   margin: 0;
   font-size: 1.8rem;
@@ -63,10 +81,6 @@
   margin-bottom: 20px;
 }
 
-.admin-nav-left {
-  /* This container holds the home button and keeps it on the left */
-}
-
 .admin-nav-center {
   display: flex;
   gap: 25px;
@@ -74,7 +88,23 @@
   flex-grow: 1;
   align-items: center; }
 
+@media (min-width: 768px) {
+    .main-header {
+        flex-direction: row; /* Switch back to horizontal layout */
+        justify-content: space-between; /* Space out the columns */
+        align-items: flex-start; /* Align items to the top */
+    }
 
+    .header-left {
+        width: auto; /* Let the logo take minimal space */
+    }
+
+    .header-info {
+        flex-grow: 1; /* Allow the info text to take remaining space */
+        padding-left: 15px;
+        text-align: left; /* Align text left on desktop */
+    }
+}
 .admin-nav-links {
   display: flex;
   gap: 25px;
